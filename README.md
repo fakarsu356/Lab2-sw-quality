@@ -25,6 +25,7 @@ The application converts raw measured values into normalized scores between 1.0 
 
 If higher values are better: score = 1 + (measuredValue - minValue) / (maxValue - minValue) * 4
 If lower values are better: score = 5 - (measuredValue - minValue) / (maxValue - minValue) * 4
+Scores are then clamped between 1.0 and 5.0 and rounded to the nearest 0.5. Dimension scores are calculated using the weighted average of their respective metrics.
 
 ISO 25010 Characteristic,ISO 25023 Metric Name,Direction,Unit,Formula Summary
 Functional Suitability,Functional Completeness Ratio,Higher,%,Implemented functions / Planned functions × 100
@@ -43,4 +44,4 @@ Maintainability,Test Coverage Ratio,Higher,%,Tested LOC / Total LOC × 100
 Maintainability,Cyclomatic Complexity (avg),Lower,score,Average cyclomatic complexity per module
 
 
-Scores are then clamped between 1.0 and 5.0 and rounded to the nearest 0.5. Dimension scores are calculated using the weighted average of their respective metrics.
+
